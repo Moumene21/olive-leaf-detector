@@ -15,22 +15,31 @@
 
 ---
 
-## 🖥️ Application Screenshots
+## 🖥️ Application
 
 <div align="center">
-
-### Main Interface — Healthy Leaf Detection
-![App Main](screenshots/screenshot_app_main.png)
-
-### Prediction — Aculus Olearius (87.7% confidence)
-![App Aculus](screenshots/screenshot_aculus.png)
-
-### Prediction — Tache Paon / Peacock Spot (93.2% confidence)
-![App Peacock](screenshots/screenshot_peacock.png)
-
-### Probability Scores per Class
-![App Probabilities](screenshots/screenshot_probabilities.png)
-
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="screenshots/screenshot_app_main.png" width="100%"/>
+<b>Main Interface</b>
+</td>
+<td align="center" width="50%">
+<img src="screenshots/screenshot_probabilities.png" width="100%"/>
+<b>Probability Scores</b>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<img src="screenshots/screenshot_aculus.png" width="100%"/>
+<b>Aculus Olearius — 87.7%</b>
+</td>
+<td align="center" width="50%">
+<img src="screenshots/screenshot_peacock.png" width="100%"/>
+<b>Peacock Spot — 93.2%</b>
+</td>
+</tr>
+</table>
 </div>
 
 ---
@@ -62,65 +71,52 @@ Developed as part of the **Master 1 Artificial Intelligence** curriculum at the 
 | Healthy | 830 images (30.5%) |
 | Aculus Olearius | 690 images (25.4%) |
 | Peacock Spot | 1,200 images (44.1%) |
-| Image format | JPG / PNG |
 
 ---
 
 ## 🧠 Machine Learning Pipeline
 
 ```
-Raw Images
-    │
-    ▼
-Feature Extraction (64×64)
-    ├── Flattened pixels  → 12,288 features
-    └── RGB histogram     →    768 features
-                               ─────────────
-                          Total: 13,056 features
-    │
-    ▼
-StandardScaler (normalization)
-    │
-    ▼
-SVM Classifier (kernel RBF, C=10)
-    │
-    ▼
-Prediction + Confidence Score
+Raw Images → Feature Extraction (64×64)
+                ├── Pixels aplatis  → 12,288 features
+                └── RGB Histogram   →    768 features
+                                    ─────────────────
+                               Total: 13,056 features
+           → StandardScaler → SVM (kernel RBF, C=10) → Prediction
 ```
 
 ---
 
-## 📈 Results
-
-| Algorithm | Test Accuracy | Training Time |
-|-----------|:-------------:|:-------------:|
-| **SVM (RBF, C=10)** | **78.68%** ✅ | ~5 min |
-| Random Forest (300 trees) | 75.49% | ~2 min |
-
-> The **SVM** was selected as the final model due to its superior accuracy.
-
-### Algorithm Comparison
-![Comparison](screenshots/screenshot_comparison.png)
-
----
-
-## 🔵 Confusion Matrices
+## 📈 Results & Confusion Matrices
 
 <div align="center">
+<table>
+<tr>
+<td align="center" width="40%">
 
-### SVM — Test Set
-![SVM Confusion Matrix](screenshots/screenshot_cm_svm.png)
+| Algorithm | Accuracy |
+|-----------|:--------:|
+| **SVM (RBF, C=10)** | **78.68% ✅** |
+| Random Forest (300) | 75.49% |
 
-### Random Forest — Test Set
-![RF Confusion Matrix](screenshots/screenshot_cm_rf.png)
+<img src="screenshots/screenshot_comparison.png" width="100%"/>
 
+</td>
+<td align="center" width="30%">
+<img src="screenshots/screenshot_cm_svm.png" width="100%"/>
+<b>SVM Confusion Matrix</b>
+</td>
+<td align="center" width="30%">
+<img src="screenshots/screenshot_cm_rf.png" width="100%"/>
+<b>RF Confusion Matrix</b>
+</td>
+</tr>
+</table>
+
+<img src="screenshots/screenshot_predictions.png" width="80%"/>
+
+**SVM Predictions on Test Set**
 </div>
-
----
-
-## 🖼️ SVM Predictions on Test Set
-
-![Predictions](screenshots/screenshot_predictions.png)
 
 ---
 
@@ -133,8 +129,6 @@ olive-leaf-detector/
 │   ├── requirements.txt        # Python dependencies
 │   └── Olive_SVM_RF.ipynb      # Complete notebook (EDA + SVM + RF)
 ├── screenshots/                # Project screenshots
-├── .gitignore
-├── LICENSE
 └── README.md
 ```
 
@@ -142,29 +136,14 @@ olive-leaf-detector/
 
 ## 🚀 Run Locally
 
-**1. Clone the repository**
 ```bash
 git clone https://github.com/Moumene21/olive-leaf-detector.git
 cd olive-leaf-detector/olive_app
-```
-
-**2. Install dependencies**
-```bash
 pip install -r requirements.txt
-```
-
-**3. Launch the app**
-```bash
 streamlit run app.py
 ```
 
-> **Note:** Models are automatically downloaded from Google Drive on first launch.
-
----
-
-## 🌐 Live Demo
-
-**🔗 https://olive-leaf-detector-z9atjfjs4qiayuyraappin3.streamlit.app**
+> Models are automatically downloaded from Google Drive on first launch.
 
 ---
 
@@ -172,26 +151,19 @@ streamlit run app.py
 
 | Tool | Usage |
 |------|-------|
-| `Python 3.13` | Core language |
 | `scikit-learn 1.8.0` | SVM, Random Forest, preprocessing |
-| `NumPy` | Numerical computation |
-| `Pillow` | Image processing |
 | `Streamlit` | Web interface |
-| `joblib` | Model serialization |
-| `gdown` | Model download from Google Drive |
-| `matplotlib / seaborn` | Data visualization |
+| `NumPy / Pillow` | Feature extraction |
+| `joblib / gdown` | Model serialization & download |
+| `matplotlib / seaborn` | Visualization |
 
 ---
 
 ## 👤 Author
 
-**Moumene** — Master 1 Artificial Intelligence
-University of Béjaïa, Algeria
+**Moumene** — Master 1 AI · University of Béjaïa, Algeria
 
 [![GitHub](https://img.shields.io/badge/GitHub-Moumene21-black?style=flat-square&logo=github)](https://github.com/Moumene21)
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License.
+*MIT License*
