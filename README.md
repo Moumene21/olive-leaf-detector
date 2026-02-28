@@ -161,7 +161,7 @@ The notebook `Olive_SVM_RF.ipynb` covers the full ML pipeline:
 
 ## 👤 Author
 
-**Moumene** — Master 1 Artificial Intelligence  
+**Meddas Massinissa** — Master 1 Artificial Intelligence  
 University of Béjaïa, Algeria
 
 [![GitHub](https://img.shields.io/badge/GitHub-Moumene21-black?style=flat-square&logo=github)](https://github.com/Moumene21)
