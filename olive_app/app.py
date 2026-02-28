@@ -77,6 +77,9 @@ def load_model():
 
     pipeline = joblib.load(pipeline_path)
     le       = joblib.load(le_path)
+    # Vérification : s'assurer que l'ordre est correct
+    if hasattr(le, 'predict'):
+        pipeline, le = le, pipeline
     return pipeline, le
 
 
