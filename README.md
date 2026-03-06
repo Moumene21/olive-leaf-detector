@@ -161,7 +161,7 @@ streamlit run app.py
 
 ## 👤 Author
 
-**Moumene** — Master 1 AI · University of Béjaïa, Algeria
+**Meddas Massinissa** — Master 1 AI · University of Béjaïa, Algeria
 
 [![GitHub](https://img.shields.io/badge/GitHub-Moumene21-black?style=flat-square&logo=github)](https://github.com/Moumene21)
 
